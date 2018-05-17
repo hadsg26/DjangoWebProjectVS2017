@@ -1,0 +1,36 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+<canvas id="myChart"></canvas> <br />
+<a href="{% url 'index' %}"> Volver a las preguntas</a><br />
+{% load i18n %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+    var options = {};
+    var ctx = document.getElementById('myChart');
+    var d = "{{dates}}".replace(/&quot;/g,"\"");
+    var c = "{{counts}}".replace(/&quot;/g,"\"");
+    var dates = JSON.parse( d );
+    var counts = JSON.parse( c );
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: dates,
+            datasets: [
+                {
+                    data: counts,
+                    label: 'Choice',
+                }
+            ]},
+         options: {
+            scales: {
+                yAxes: [{
+                ticks: {
+                beginAtZero: true
+        }
+      }]
+    }
+  }
+    })
+</script>
+{% endblock %}
+

@@ -1,0 +1,28 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<address>
+    <img src="../static/yo.gif" width="100" height="120"/><br />
+    Jose Angel Vadillo <br />
+    UPV/EHU <br />
+    Facultad de Informatica<br />
+    San Sebastian
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:vadillo@ehu.es">vadillo@ehu.eus</a><br />
+    <strong>Enlaces recomendados:</strong> <br />
+        <a href=https://developer.mozilla.org/es/docs/Learn/Server-side/Primeros_pasos/Web_frameworks >General sobre frameworks</a><br />
+        <a href=http://docs.python.org.ar/tutorial/django/tutorial03# >Web oficial de Python</a><br />
+        <a href=https://tutorial.djangogirls.org/es/ >Django Girls</a><br/>
+        <a href=https://djangobook.com/developing-django-visual-studio/ >Como crear un proyecto Django en VS 2015</a><br/>
+        <a href=https://www.youtube.com/watch?time_continue=11&v=K1wTxfPzaIs/ > Como crear un proyecto Django en VS 2017</a><br/>
+        <a href=http://www.chartjs.org /> Graficos con la API Chartjs</a><br/>
+        <a href=https://www.youtube.com/watch?v=WG3pGmoo8nE/> Video para crear el proyecto con la demo de encuestas</a><br/>
+</address>
+
+{% endblock %}

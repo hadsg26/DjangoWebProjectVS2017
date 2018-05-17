@@ -1,0 +1,18 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+{% for choice in question.opcion_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'chart' question.id %}"> Ver grafica</a><br />
+<a href="{% url 'index' %}">Contestar otra pregunta?</a>
+
+{% endblock %}
